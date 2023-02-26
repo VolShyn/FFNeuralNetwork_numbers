@@ -1,8 +1,6 @@
-from typing import Iterable
-import logging 
 import numpy as np
 
-def train_test_split(data: Iterable, percentage = 0.9):
+def train_test_split(data: np.ndarray, percentage = 0.9) -> tuple:
     """
     function to split data into training and testing sets
 
@@ -13,12 +11,6 @@ def train_test_split(data: Iterable, percentage = 0.9):
     rows, cols = data.shape
     needed_len = int(len(data) * percentage)
 
-
-    try:
-        data = data.to_numpy()
-    except Exception as e:
-        logging.exception(e)
-
     # Shuffle before splitting
     np.random.shuffle(data)
 
@@ -26,17 +18,18 @@ def train_test_split(data: Iterable, percentage = 0.9):
     # mask = np.random.rand(len(data)) =< percentage
     
     #Test set
-    test_data = data[needed_len: rows].T
+    test_data = data[0:3000].T
     X_test = test_data[1:cols]
     Y_test = test_data[0]
 
     X_test = X_test / 255
 
     #Train set
-    train_data = data[0:needed_len].T
+    train_data = data[3000:rows].T
     X_train = train_data[1:cols]
     Y_train = train_data[0]
 
     X_train = X_train / 255
 
     return X_train, Y_train, X_test, Y_test
+          

@@ -16,6 +16,9 @@ def backward_propagation(Z1, A1, Z2, A2, Z3, A3, W1, W2, W3, X, Y):
 
     return dWn, dbn
     """
+    
+    m = 39000
+    n = 785
 
     one_hot_Y = one_hot_encode(Y)
 
