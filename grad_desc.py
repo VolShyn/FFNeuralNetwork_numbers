@@ -14,7 +14,7 @@ def get_accuracy(predictions, Y):
     return np.sum(predictions == Y) / Y.size
 
 def make_predictions(X, W1, b1, W2, b2, W3, b3):
-    _, _, _, A3 = forward_propagation(W1, b1, W2, b2, W3, b3, X)
+    _1,_2, _3,_4, _5, A3 = forward_propagation(W1, b1, W2, b2, W3, b3, X)
     predictions = get_predictions(A3)
     return predictions
 
@@ -42,7 +42,7 @@ def gradient_descent(X, Y, alpha, iterations):
         dW1, db1, dW2, db2, dW3, db3 = backward_propagation(Z1, A1, Z2, A2, Z3, A3, W1, W2, W3, X, Y)
         W1, b1, W2, b2, W3, b3 = update_params(W1, b1, W2, b2, W3, b3, dW1, db1, dW2, db2, dW3, db3, alpha)
         if i % 10 == 0:
-            print("Iteration: ", i)
+            print("Epoch: ", i)
             predictions = get_predictions(A3)
             print(get_accuracy(predictions, Y))
     return W1, b1, W2, b2, W3, b3

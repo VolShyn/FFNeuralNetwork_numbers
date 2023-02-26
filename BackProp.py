@@ -1,7 +1,7 @@
 import numpy as np
 from one_hot import one_hot_encode
 
-def RelU_deriv(Z: np.array) -> np.array:
+def RelU_deriv(Z: np.ndarray) -> np.ndarray:
     """
     function to return derivative of RelU
 

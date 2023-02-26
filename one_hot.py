@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def one_hot_encode(Y: np.array) -> np.array:
+def one_hot_encode(Y: np.ndarray) -> np.ndarray:
       """
       func realisation of one hot encoding
       

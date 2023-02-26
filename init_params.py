@@ -19,3 +19,4 @@ def init_params():
     b3 = np.random.rand(10,1) - 0.5
 
     return W1,b1, W2,b2, W3,b3
+    

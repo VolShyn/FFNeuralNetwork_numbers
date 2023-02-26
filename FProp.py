@@ -1,6 +1,6 @@
 import numpy as np
 
-def RelU(Z: np.array) -> np.array:
+def RelU(Z: np.ndarray) -> np.ndarray:
     """
     non-linear ReLU function
 
@@ -8,7 +8,7 @@ def RelU(Z: np.array) -> np.array:
     """
     return np.maximum(Z, 0)
 
-def SoftMax(Z: np.array) -> np.array:
+def SoftMax(Z: np.ndarray) -> np.ndarray:
     """
     non-linear SoftMax function
 
