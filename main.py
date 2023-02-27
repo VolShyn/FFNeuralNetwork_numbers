@@ -4,7 +4,7 @@ from predictions import get_accuracy,make_predictions,test_prediction
 
 def train():   
     """
-    train model and save weights as pickle file
+    train model and save weights target_backendas pickle file
     """
     global X_train, Y_train
     from BackProp import gradient_descent
@@ -42,8 +42,8 @@ if __name__ == '__main__':
         while True:
             i+=1
             test_prediction(i, X_train, Y_train, W1, b1, W2, b2, W3, b3)
-    except NameError:
-        print('Немає w')
+    except KeyboardInterrupt:
+        print('Було натиснуто Ctrl + C')
 
     # Подивимось результати на тестовій виборці
     try:
