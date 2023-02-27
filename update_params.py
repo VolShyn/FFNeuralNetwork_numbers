@@ -1,6 +1,3 @@
-from numba import jit
-
-@jit(target = 'gpu')
 def update_params(W1, b1, W2, b2, W3, b3, dW1, db1, dW2, db2, dW3, db3, alpha):
     """
     updating weights and biases of NN
