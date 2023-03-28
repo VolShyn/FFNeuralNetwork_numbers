@@ -14,14 +14,11 @@ def SoftMax(Z: np.ndarray) -> np.ndarray:
 
     return iterable of values from 0 to 1
     """
-    return np.exp(Z) / sum(np.exp(Z))
+    exp_Z = np.exp(Z - np.max(Z, axis=0, keepdims=True))
+    return exp_Z / np.sum(exp_Z, axis=0, keepdims=True)
+
 
 def forward_propagation(W1,b1,W2,b2,W3,b3,X):
-    """
-    realisation of 3 layers NN feed-forward propagation
-    
-    return Z's and A's
-    """
     Z1 = W1.dot(X) + b1
     A1 = RelU(Z1)
     
